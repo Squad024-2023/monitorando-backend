@@ -40,7 +40,7 @@ public class Runner implements CommandLineRunner {
 			String x = String.valueOf(i);
 			Professor prof0 = new Professor();
 			prof0.setId((long) 1 + i);
-			prof0.setNome("admin");
+			prof0.setNome("admin" + x);
 			prof0.setEmail("admin@admin.com " + x);
 			prof0.setDataNascimento(LocalDate.now());
 			prof0.setTelefone("123456789" + x);
@@ -59,7 +59,7 @@ public class Runner implements CommandLineRunner {
 			// Alunos
 			Aluno aluno0 = new Aluno();
 			aluno0.setId((long) 1 + i);
-			aluno0.setNome("aluno");
+			aluno0.setNome("aluno" + x);
 			aluno0.setEmail("aluno@aluno.com " + x);
 			aluno0.setDataNascimento(LocalDate.now());
 			aluno0.setTelefone("44455578" + x);

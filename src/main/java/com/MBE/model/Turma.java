@@ -7,6 +7,7 @@ import java.util.Set;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.MBE.enums.TipoTurma;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -43,6 +44,7 @@ public class Turma extends Entidade{
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "disciplina_id_fk", nullable= false)
+	@JsonBackReference
 	private Disciplina disciplina;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

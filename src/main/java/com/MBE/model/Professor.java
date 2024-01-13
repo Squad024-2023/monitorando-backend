@@ -22,7 +22,6 @@ public class Professor extends Usuarios {
     private String profDescricao;
 	
 	
-	//@JsonManagedReference
 	@ManyToMany(mappedBy = "professores", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	private Set<Disciplina> disciplinas = new HashSet<Disciplina>();
 
