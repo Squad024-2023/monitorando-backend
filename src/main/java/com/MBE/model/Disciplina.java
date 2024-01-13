@@ -3,6 +3,9 @@ package com.MBE.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -12,13 +15,15 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id") //usado para gerar identidade durante serialização e deserialização
 @Table(name = "disciplinas")
 public class Disciplina extends Entidade {
 	
 	@Column(nullable = false)
 	private String nome;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	//@JsonBackReference
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name ="disciplinas_professores",
 	joinColumns = @JoinColumn(name = "disciplina_id_fk"),
 	inverseJoinColumns = @JoinColumn(name = "professor_id_fk")
