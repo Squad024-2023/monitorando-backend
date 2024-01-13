@@ -25,6 +25,7 @@ import jakarta.persistence.Table;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id") //usado para gerar identidade durante serialização e deserialização
 @Table(name = "turmas")
 public class Turma extends Entidade{
+	
 	@Column(nullable = false)
 	private String materiaTurma;
 	
@@ -44,7 +45,7 @@ public class Turma extends Entidade{
 	@JoinColumn(name = "disciplina_id_fk", nullable= false)
 	private Disciplina disciplina;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "turma_alunos",
 	joinColumns = @JoinColumn(name = "turma_id_fk"),
 	inverseJoinColumns = @JoinColumn(name = "aluno_id_fk")

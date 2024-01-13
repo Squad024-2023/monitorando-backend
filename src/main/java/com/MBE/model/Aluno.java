@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 @Table(name = "alunos")
 public class Aluno extends Usuarios{
 	
-	@ManyToMany(mappedBy = "alunos", fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "alunos", fetch = FetchType.EAGER)
 	private Set<Turma> turmas = new HashSet<Turma>();
 
 	public Set<Turma> getTurmas() {
