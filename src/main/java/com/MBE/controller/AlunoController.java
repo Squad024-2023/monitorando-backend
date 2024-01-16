@@ -56,10 +56,6 @@ public class AlunoController {
 			@DeleteMapping("/alunos/{id}")
 			public void deleteAluno(@PathVariable Long id) {
 				alunoRepository.deleteById(id);
-				
-				
-				
-				alunoRepository.deleteById(id);
 			}
 
 }
