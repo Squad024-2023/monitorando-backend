@@ -35,17 +35,16 @@ public class TurmaController {
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
-
+	
 	// uptade turma
-
 	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
 		Turma turma = turmaRepository.findById(id).get();
 		turma.setTipoTurma(turmaDetails.getTipoTurma());
-		turma.setMateriaTurma(turma.getMateriaTurma());
-		turma.setDisciplina(turma.getDisciplina());
-		turma.setProfessor(turma.getProfessor());
-		turma.setDataAula(turma.getDataAula());
+		turma.setMateriaTurma(turmaDetails.getMateriaTurma());
+		turma.setDisciplina(turmaDetails.getDisciplina());
+		turma.setProfessor(turmaDetails.getProfessor());
+		turma.setDataAula(turmaDetails.getDataAula());
 		return turmaRepository.save(turma);
 	}
 

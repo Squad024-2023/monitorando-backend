@@ -29,7 +29,6 @@ public class ProfessorController {
 //	private DisciplinaRepository disciplinaRepository;
 //	
 	
-	
 	//get all "professores"
 	@GetMapping("/professores")
 	public List<Professor> getAllProfessores(){
