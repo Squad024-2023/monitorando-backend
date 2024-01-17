@@ -78,7 +78,5 @@ public class Runner implements CommandLineRunner {
 			turma0.getAlunos().add(aluno0);
 			turmaRepository.save(turma0);
 		}
-
 	}
-
 }
