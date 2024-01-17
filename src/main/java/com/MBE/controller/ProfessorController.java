@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.MBE.model.Professor;
 import com.MBE.repository.ProfessorRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
-
-
+@CrossOrigin
 @RestController
 public class ProfessorController {
 	
