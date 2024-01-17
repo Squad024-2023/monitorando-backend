@@ -3,6 +3,7 @@ package com.MBE.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -23,6 +24,7 @@ public class Professor extends Usuarios {
 	
 	
 	@ManyToMany(mappedBy = "professores", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+	@JsonBackReference //define o filho da relação
 	private Set<Disciplina> disciplinas = new HashSet<Disciplina>();
 
 	

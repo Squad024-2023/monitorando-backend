@@ -3,6 +3,7 @@ package com.MBE.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -17,6 +18,7 @@ import jakarta.persistence.Table;
 public class Aluno extends Usuarios{
 	
 	@ManyToMany(mappedBy = "alunos", fetch = FetchType.EAGER)
+	@JsonBackReference //define o filho da relação
 	private Set<Turma> turmas = new HashSet<Turma>();
 
 	public Set<Turma> getTurmas() {

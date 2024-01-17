@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
-
+@CrossOrigin
 @RestController
 public class TurmaController {
 
@@ -27,7 +26,6 @@ public class TurmaController {
 	@GetMapping("/turmas")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
-
 	}
 
 	// create turma

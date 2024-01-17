@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.MBE.enums.TipoUsuario;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
-
+@CrossOrigin
 @RestController
 public class EnumController {
 	

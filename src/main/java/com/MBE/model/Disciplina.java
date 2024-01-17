@@ -29,6 +29,7 @@ public class Disciplina extends Entidade {
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "disciplinas_professores", joinColumns = @JoinColumn(name = "disciplina_id_fk"), inverseJoinColumns = @JoinColumn(name = "professor_id_fk"))
+	@JsonManagedReference // use essa anotação para indicar o pai da relação das tabelas
 	private Set<Professor> professores = new HashSet<Professor>();
 
 	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER)

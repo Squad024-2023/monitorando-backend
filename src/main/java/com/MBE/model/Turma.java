@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.MBE.enums.TipoTurma;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
@@ -44,7 +45,7 @@ public class Turma extends Entidade{
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "disciplina_id_fk", nullable= false)
-	@JsonBackReference
+	@JsonBackReference //define o filho da relação
 	private Disciplina disciplina;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -52,6 +53,7 @@ public class Turma extends Entidade{
 	joinColumns = @JoinColumn(name = "turma_id_fk"),
 	inverseJoinColumns = @JoinColumn(name = "aluno_id_fk")
 	)
+	@JsonManagedReference // use essa anotação para indicar o pai da relação das tabelas
 	private Set<Aluno> alunos = new HashSet<Aluno>();
 
 	public String getMateriaTurma() {
