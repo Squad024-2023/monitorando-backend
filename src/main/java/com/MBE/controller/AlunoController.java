@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,11 +36,13 @@ public class AlunoController {
 		}
 		
 		//create aluno rest api
+		@PostMapping("/alunos")
 		public Aluno createAluno(@RequestBody Aluno aluno) {
 			return alunoRepository.save(aluno);
 		}
 		
 		//update aluno rest api
+		@PutMapping("alunos/{id}")
 		public Aluno updateAluno(@PathVariable Long id, @RequestBody Aluno alunoDetails) {
 			Aluno aluno = alunoRepository.findById(id).get();
 			aluno.setNome(alunoDetails.getNome());
