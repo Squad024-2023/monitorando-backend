@@ -11,4 +11,8 @@ import com.MBE.model.Turma;
 public interface TurmaRepository extends JpaRepository<Turma, Long>{
 	
 	  Optional<Turma> findByMateriaTurma(String materiaTurma);
+
+
+
+
 }
