@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.MBE.model.Disciplina;
 import com.MBE.repository.DisciplinaRepository;
 import com.MBE.repository.ProfessorRepository;
-import com.MBE.repository.TurmaRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
 
@@ -25,8 +24,8 @@ public class DisciplinaController {
 	@Autowired
 	private DisciplinaRepository disciplinaRepository;
 	
-	 @Autowired
-	 private ProfessorRepository professorRepository;
+//	 @Autowired
+//	 private ProfessorRepository professorRepository;
 
 	// get all disciplinas
 	@GetMapping("/disciplinas")
