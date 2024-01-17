@@ -50,6 +50,14 @@ public class Disciplina extends Entidade {
 	public void setProfessores(Set<Professor> professores) {
 		this.professores = professores;
 	}
+	
+	public Set<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(Set<Turma> turmas) {
+		this.turmas = turmas;
+	}
 
 	public void addProfessor(Professor professor) {
 		professores.add(professor);
