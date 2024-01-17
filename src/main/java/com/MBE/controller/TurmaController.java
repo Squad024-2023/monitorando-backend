@@ -49,7 +49,6 @@ public class TurmaController {
 	}
 
 	// delete turma
-
 	@DeleteMapping("/turmas/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);
