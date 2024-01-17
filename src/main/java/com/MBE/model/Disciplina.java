@@ -32,7 +32,7 @@ public class Disciplina extends Entidade {
 	private Set<Professor> professores = new HashSet<Professor>();
 
 	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER)
-	@JsonManagedReference // Use this annotation to indicate the "parent" side of the relationship
+	@JsonManagedReference // use essa anotação para indicar o pai da relação das tabelas
 	private Set<Turma> turmas = new HashSet<>();
 
 	public String getNome() {
@@ -45,6 +45,14 @@ public class Disciplina extends Entidade {
 
 	public Set<Professor> getProfessores() {
 		return professores;
+	}
+
+	public Set<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(Set<Turma> turmas) {
+		this.turmas = turmas;
 	}
 
 	public void setProfessores(Set<Professor> professores) {
