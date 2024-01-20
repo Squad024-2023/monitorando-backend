@@ -39,6 +39,7 @@ public class TurmaController {
 		return turmaRepository.save(turma);
 	}
 	
+	@Operation(summary = "Atualizar turma")
 	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
 		Turma turma = turmaRepository.findById(id).get();
