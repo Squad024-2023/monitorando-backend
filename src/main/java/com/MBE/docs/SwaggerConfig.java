@@ -1,6 +1,5 @@
 package com.MBE.docs;
 
-<<<<<<< HEAD
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -25,8 +24,4 @@ public class SwaggerConfig {
 			.url("https://github.com/Squad024-2023/monitorando-backend/tree/master")
     			);
     }
-=======
-public class SwaggerConfig {
-	
->>>>>>> e8cbeee29c93dddd346205a417df92402eb53d0e
 }
