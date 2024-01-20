@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
+
 @CrossOrigin
 @RestController
 public class TurmaController {
@@ -22,19 +23,16 @@ public class TurmaController {
 	@Autowired
 	private TurmaRepository turmaRepository;
 
-	// get all turmas
 	@GetMapping("/turmas")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
 
-	// create turma
 	@PostMapping("/turmas")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
 	
-	// uptade turma
 	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
 		Turma turma = turmaRepository.findById(id).get();
@@ -46,7 +44,6 @@ public class TurmaController {
 		return turmaRepository.save(turma);
 	}
 
-	// delete turma
 	@DeleteMapping("/turmas/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);

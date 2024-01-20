@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.MBE.enums.TipoUsuario;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -71,9 +72,6 @@ public abstract class Usuarios extends Entidade {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-	
-
 
 	
 }
