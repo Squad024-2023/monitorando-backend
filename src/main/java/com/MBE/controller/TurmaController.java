@@ -15,14 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 
 @CrossOrigin
 @RestController
+@Tag(name = "Turmas")
 public class TurmaController {
 
 	@Autowired
 	private TurmaRepository turmaRepository;
 
+	@Operation(summary = "Listar todas as turmas")
 	@GetMapping("/turmas")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
