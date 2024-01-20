@@ -32,7 +32,8 @@ public class TurmaController {
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-
+	
+	@Operation(summary = "Criar nova turma")
 	@PostMapping("/turmas")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
