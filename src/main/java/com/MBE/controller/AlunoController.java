@@ -39,7 +39,7 @@ public class AlunoController {
 		return alunoRepository.findAll();
 	}
 
-@Operation(summary="Recuperas informações de um aluno pelo ID",
+@Operation(summary="Recupera as informações de um aluno pelo ID",
 description ="Retorna os detalhes completos de um aluno com base no ID fornecido.")
 @ApiResponses(value= {
 		@ApiResponse(responseCode ="200", description="Aluno recuperado com sucesso!"),
@@ -61,13 +61,22 @@ description ="Retorna os detalhes completos de um aluno com base no ID fornecido
 	}
 
 
-
-
-	// create aluno rest api
+@Operation(summary = "Criação de um novo aluno",
+description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
+@ApiResponses(value = {
+	    @ApiResponse(responseCode = "200", description = "Operação bem-sucedida, aluno cadastrado"),
+        @ApiResponse(responseCode = "201", description = "Aluno cadastrado com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Requisição inválida, verifique os parâmetros fornecidos"),
+        @ApiResponse(responseCode = "500", description = "Erro interno do servidor ao cadastrar o aluno")
+    
+})
 	@PostMapping("/alunos")
 	public Aluno createAluno(@RequestBody Aluno aluno) {
 		return alunoRepository.save(aluno);
 	}
+
+
+
 
 	// update aluno rest api
 	@PutMapping("alunos/{id}")
