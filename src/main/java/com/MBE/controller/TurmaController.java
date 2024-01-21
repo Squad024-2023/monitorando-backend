@@ -34,15 +34,21 @@ public class TurmaController {
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-	
+		
+	//get turma by id rest api
+	@GetMapping("/turmas/{id}")
+	public Turma getTurmaById(@PathVariable Long id) {
+		return turmaRepository.findById(id).get();
+	}
+
 	@Operation(summary = "Criar nova turma")
 	@PostMapping("/criar")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
 	
-	@Operation(summary = "Atualizar turma")
-	@PutMapping("/atualizar/{id}")
+	// uptade turma
+	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
 		Turma turma = turmaRepository.findById(id).get();
 		turma.setTipoTurma(turmaDetails.getTipoTurma());
