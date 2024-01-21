@@ -18,7 +18,6 @@ import com.MBE.repository.TurmaRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-
 @CrossOrigin
 @RestController
 @Tag(name = "Turmas")
@@ -51,6 +50,7 @@ public class TurmaController {
 		return turmaRepository.save(turma);
 	}
 
+	@Operation(summary = "Deletar uma turma")
 	@DeleteMapping("/turmas/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);
