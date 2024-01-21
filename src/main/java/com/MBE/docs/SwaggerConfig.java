@@ -27,7 +27,7 @@ public class SwaggerConfig {
 		.tags(	
 			Arrays.asList(
 					new Tag().name("Turma").description("Tudo Sobre Turmas"),
-					new Tag().name("Aluno").description("Tudo Sobre Alunos"),
+					new Tag().name("Aluno").description("Operações relacionadas a aluno"),
 					new Tag().name("Disciplina").description("Tudo Sobre Disciplinas"),
 					new Tag().name("Professor").description("Tudo Sobre Professores")
 					)
