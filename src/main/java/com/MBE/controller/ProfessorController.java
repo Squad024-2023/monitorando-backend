@@ -48,6 +48,7 @@ public class ProfessorController {
 	}
 	
 	//create professor rest api
+	@Operation(summary = "Método para criar novos dados")
 	@PostMapping("/professores")
 	public Professor createProfessor(@RequestBody Professor professor) {
 		return professorRepository.save(professor);
