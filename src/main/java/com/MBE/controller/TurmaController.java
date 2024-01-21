@@ -17,7 +17,6 @@ import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @CrossOrigin
