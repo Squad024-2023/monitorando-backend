@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.MBE.docsapi.TurmaControllerApi;
 import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
@@ -23,13 +24,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @CrossOrigin
 @RestController
 @RequestMapping("/turmas")
-@Tag(name = "Turmas")
-public class TurmaController {
+
+public class TurmaController implements TurmaControllerApi {
 
 	@Autowired
 	private TurmaRepository turmaRepository;
 
-	@Operation(summary = "Listar todas as turmas")
 	@GetMapping("/lista")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
@@ -57,5 +57,11 @@ public class TurmaController {
 	@DeleteMapping("/deletar/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);
+	}
+
+	@Override
+	public String findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
