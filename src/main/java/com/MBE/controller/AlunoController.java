@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.webjars.NotFoundException;
 
 import com.MBE.model.Aluno;
 import com.MBE.repository.AlunoRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
 
 @CrossOrigin
 @RestController
@@ -38,11 +39,29 @@ public class AlunoController {
 		return alunoRepository.findAll();
 	}
 
-	// get aluno by id rest api
-	@GetMapping("/alunos/{id}")
+@Operation(summary="Recuperas informações de um aluno pelo ID",
+description ="Retorna os detalhes completos de um aluno com base no ID fornecido.")
+@ApiResponses(value= {
+		@ApiResponse(responseCode ="200", description="Aluno recuperado com sucesso!"),
+		@ApiResponse(responseCode ="400", description="Aluno não encontrado"),
+		  @ApiResponse(responseCode = "500", description = "Erro interno do servidor ao recuperar o aluno")
+})
+@Parameter(
+        name = "id",
+        description = "ID do aluno a ser recuperado",
+        required = true
+)
+@GetMapping("/alunos/{id}")
 	public Aluno getAlunoById(@PathVariable Long id) {
-		return alunoRepository.findById(id).get();
+	try {
+        return alunoRepository.findById(id).orElseThrow(() -> new NotFoundException("Aluno não encontrado"));
+    } catch (Exception e) {
+        throw new RuntimeException("Erro interno do servidor ao recuperar o aluno", e);
+    }
 	}
+
+
+
 
 	// create aluno rest api
 	@PostMapping("/alunos")
