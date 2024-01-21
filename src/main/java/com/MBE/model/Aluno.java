@@ -18,7 +18,6 @@ import jakarta.persistence.Table;
 public class Aluno extends Usuarios{
 	
 	@ManyToMany(mappedBy = "alunos", fetch = FetchType.EAGER)
-	@JsonBackReference //define o filho da relação
 	private Set<Turma> turmas = new HashSet<Turma>();
 
 	public Set<Turma> getTurmas() {
