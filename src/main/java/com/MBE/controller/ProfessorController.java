@@ -41,6 +41,7 @@ public class ProfessorController {
 	}
 	
 	//get professor by id rest api
+	@Operation(summary = "Buscar Professores por ID")
 	@GetMapping("/professores/{id}")
 	public Professor getProfessorById(@PathVariable Long id) {
 		return professorRepository.findById(id).get();
