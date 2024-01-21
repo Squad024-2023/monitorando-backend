@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.MBE.docsapi.TurmaControllerApi;
@@ -23,7 +22,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/turmas")
 
 public class TurmaController implements TurmaControllerApi {
 
@@ -35,7 +33,7 @@ public class TurmaController implements TurmaControllerApi {
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
-	@GetMapping("/lista")
+	@GetMapping("/turmas")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
@@ -45,8 +43,21 @@ public class TurmaController implements TurmaControllerApi {
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
+	
+	@Operation(summary = "Consultar por ID")
+    @GetMapping("/turmas/{id}")
+    public Turma getTurmaById(@PathVariable Long id) {
+        return turmaRepository.findById(id).get();
+    }
+	
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
+	
 	@Operation(summary = "Criar nova turma")
-	@PostMapping("/criar")
+	@PostMapping("/turmas")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
@@ -57,7 +68,7 @@ public class TurmaController implements TurmaControllerApi {
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
 	@Operation(summary = "Atualizar turma")
-	@PutMapping("/atualizar/{id}")
+	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
 		Turma turma = turmaRepository.findById(id).get();
 		turma.setTipoTurma(turmaDetails.getTipoTurma());
@@ -73,8 +84,8 @@ public class TurmaController implements TurmaControllerApi {
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
-	@Operation(summary = "Deletar uma turma")
-	@DeleteMapping("/deletar/{id}")
+	@Operation(summary = "Deletar turma por ID")
+	@DeleteMapping("/turmas/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);
 	}
