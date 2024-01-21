@@ -27,6 +27,12 @@ public class TurmaController {
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
+	
+	//get turma by id rest api
+	@GetMapping("/turmas/{id}")
+	public Turma getTurmaById(@PathVariable Long id) {
+		return turmaRepository.findById(id).get();
+	}
 
 	// create turma
 	@PostMapping("/turmas")
