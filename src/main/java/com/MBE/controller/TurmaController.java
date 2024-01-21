@@ -17,7 +17,6 @@ import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @CrossOrigin
@@ -34,13 +33,19 @@ public class TurmaController {
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-	
+		
+	//get turma by id rest api
+	@GetMapping("/turmas/{id}")
+	public Turma getTurmaById(@PathVariable Long id) {
+		return turmaRepository.findById(id).get();
+	}
+
 	@Operation(summary = "Criar nova turma")
 	@PostMapping("/criar")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
-	
+
 	@Operation(summary = "Atualizar turma")
 	@PutMapping("/atualizar/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
