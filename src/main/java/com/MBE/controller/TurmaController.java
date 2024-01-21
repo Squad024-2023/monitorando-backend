@@ -18,8 +18,8 @@ import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
 
 @CrossOrigin
 @RestController
@@ -30,17 +30,32 @@ public class TurmaController implements TurmaControllerApi {
 	@Autowired
 	private TurmaRepository turmaRepository;
 
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
 	@GetMapping("/lista")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
 	
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
 	@Operation(summary = "Criar nova turma")
 	@PostMapping("/criar")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
 	
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
 	@Operation(summary = "Atualizar turma")
 	@PutMapping("/atualizar/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
@@ -53,15 +68,15 @@ public class TurmaController implements TurmaControllerApi {
 		return turmaRepository.save(turma);
 	}
 
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
 	@Operation(summary = "Deletar uma turma")
 	@DeleteMapping("/deletar/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);
 	}
-
-	@Override
-	public String findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

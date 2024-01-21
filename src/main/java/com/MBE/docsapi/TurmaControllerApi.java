@@ -1,5 +1,9 @@
 package com.MBE.docsapi;
 
+import java.util.List;
+
+import com.MBE.model.Turma;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -7,6 +11,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public interface TurmaControllerApi {
 	
 	@Operation(summary = "Listar todas as turmas")
-	String findAll();
+	List<Turma> getAllTurmas();
 
 }
