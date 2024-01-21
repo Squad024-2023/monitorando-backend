@@ -10,16 +10,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/turmas")
 @Tag(name = "Turmas")
 public class TurmaController {
 
@@ -27,19 +30,19 @@ public class TurmaController {
 	private TurmaRepository turmaRepository;
 
 	@Operation(summary = "Listar todas as turmas")
-	@GetMapping("/turmas")
+	@GetMapping("/lista")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
 	
 	@Operation(summary = "Criar nova turma")
-	@PostMapping("/turmas")
+	@PostMapping("/criar")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
 	
 	@Operation(summary = "Atualizar turma")
-	@PutMapping("/turmas/{id}")
+	@PutMapping("/atualizar/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
 		Turma turma = turmaRepository.findById(id).get();
 		turma.setTipoTurma(turmaDetails.getTipoTurma());
@@ -51,7 +54,7 @@ public class TurmaController {
 	}
 
 	@Operation(summary = "Deletar uma turma")
-	@DeleteMapping("/turmas/{id}")
+	@DeleteMapping("/deletar/{id}")
 	public void deleteTurma(@PathVariable Long id) {
 		turmaRepository.deleteById(id);
 	}
