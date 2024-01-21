@@ -10,13 +10,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.MBE.model.Professor;
 import com.MBE.repository.ProfessorRepository;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @CrossOrigin
 @RestController
+@RequestMapping("/professor")
+@Tag(name = "Professores")
 public class ProfessorController {
 	
 	@Autowired
@@ -28,7 +34,8 @@ public class ProfessorController {
 //	
 	
 	//get all "professores"
-	@GetMapping("/professores")
+	@Operation(summary = "Buscar todos professores")
+	@GetMapping("/listar professores")
 	public List<Professor> getAllProfessores(){
 		return professorRepository.findAll();
 	}
