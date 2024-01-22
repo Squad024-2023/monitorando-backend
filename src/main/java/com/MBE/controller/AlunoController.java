@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.webjars.NotFoundException;
 
@@ -60,8 +61,22 @@ description ="Retorna os detalhes completos de um aluno com base no ID fornecido
     }
 	}
 
+/*Para testar o Swagger e criar um aluno com sucesso, faça o seguinte:
+ * Delete o json criado e subsitua por esse modelo
+ * {
+  "id": 0,
+  "nome": "Ana",
+  "telefone": "string",
+  "dataNascimento": "2024-01-21",
+  "email": "string",
+  "tipoUsuario": "ADMIN",
+  "senha": "string4",
+  "turmas": []
+  
+}
 
-@Operation(summary = "Criação de um novo aluno",
+ * */
+@Operation(summary = "Cria de um novo aluno",
 description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
 @ApiResponses(value = {
 	    @ApiResponse(responseCode = "200", description = "Operação bem-sucedida, aluno cadastrado"),
@@ -74,11 +89,8 @@ description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
 	public Aluno createAluno(@RequestBody Aluno aluno) {
 		return alunoRepository.save(aluno);
 	}
+//Editar um aluno
 
-
-
-
-	// update aluno rest api
 	@PutMapping("alunos/{id}")
 	public Aluno updateAluno(@PathVariable Long id, @RequestBody Aluno alunoDetails) {
 		Aluno aluno = alunoRepository.findById(id).get();
@@ -93,7 +105,10 @@ description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
 
 	}
 
-	// delete aluno rest api
+	@Operation(summary="Apagar um aluno",
+			description="Esta opção permite a remoção de um aluno com um ID específico")
+	@ApiResponse(responseCode = "200", description = "Aluno removido com sucesso")
+	@ApiResponse(responseCode = "404", description = "Aluno não encontrado para o ID fornecido")
 	@DeleteMapping("/alunos/{id}")
 	public void deleteAluno(@PathVariable Long id) {
 		alunoRepository.deleteById(id);
