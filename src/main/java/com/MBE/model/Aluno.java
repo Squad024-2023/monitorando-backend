@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -15,8 +17,13 @@ import jakarta.persistence.Table;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id") //usado para gerar identidade durante serialização e deserialização
 @Table(name = "alunos")
 public class Aluno extends Usuarios{
+		
 	
-	@ManyToMany(mappedBy = "alunos", fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "alunos_turmas",
+	joinColumns = @JoinColumn(name = "aluno_id_fk"),
+	inverseJoinColumns = @JoinColumn(name = "turma_id_fk")
+	)
 	private Set<Turma> turmas = new HashSet<Turma>();
 
 	public Set<Turma> getTurmas() {
