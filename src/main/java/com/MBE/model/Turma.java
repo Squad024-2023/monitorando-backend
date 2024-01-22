@@ -16,7 +16,6 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -45,11 +44,7 @@ public class Turma extends Entidade{
 	@JoinColumn(name = "disciplina_id_fk", nullable= false)
 	private Disciplina disciplina;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "turma_alunos",
-	joinColumns = @JoinColumn(name = "turma_id_fk"),
-	inverseJoinColumns = @JoinColumn(name = "aluno_id_fk")
-	)
+	@ManyToMany(mappedBy = "turmas", fetch = FetchType.EAGER)
 	private Set<Aluno> alunos = new HashSet<Aluno>();
 
 	public String getMateriaTurma() {
