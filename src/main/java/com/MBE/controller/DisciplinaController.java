@@ -12,26 +12,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.MBE.docsapi.DisciplinaControllerApi;
 import com.MBE.model.Disciplina;
 import com.MBE.repository.DisciplinaRepository;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 @CrossOrigin
 @RestController
-public class DisciplinaController {
+
+public class DisciplinaController implements DisciplinaControllerApi {
 
 	@Autowired
 	private DisciplinaRepository disciplinaRepository;
 	
 //	 @Autowired
 //	 private ProfessorRepository professorRepository;
-
-	// get all disciplinas
+	
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
 	@GetMapping("/disciplinas")
 	public List<Disciplina> getAllDisciplinas() {
 		return disciplinaRepository.findAll();
 	}
 	
-	//get disciplina by id rest api
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
+	@Operation(summary = "Consultar por ID:")
     @GetMapping("/disciplinas/{id}")
     public Disciplina getDisciplinaById(@PathVariable Long id) {
         return disciplinaRepository.findById(id).get();
