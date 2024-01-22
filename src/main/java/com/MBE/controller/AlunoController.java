@@ -29,7 +29,7 @@ public class AlunoController implements AlunoControllerApi {
 	@Autowired
 	private AlunoRepository alunoRepository;
 
-	@Operation(summary = "Retorna uma lista de todos os alunos cadastrados")
+	@Operation(summary = "Retornar uma lista de todos os alunos cadastrados")
 	@ApiResponses(value = {
 		    @ApiResponse(responseCode = "200", description = "Lista de alunos recuperada com sucesso"),
 		    @ApiResponse(responseCode = "404", description = "Nenhum aluno encontrado")
@@ -40,7 +40,7 @@ public class AlunoController implements AlunoControllerApi {
 		return alunoRepository.findAll();
 	}
 
-@Operation(summary="Recupera as informações de um aluno pelo ID",
+@Operation(summary="Recuperar as informações de um aluno pelo ID especifíco",
 description ="Retorna os detalhes completos de um aluno com base no ID fornecido.")
 @ApiResponses(value= {
 		@ApiResponse(responseCode ="200", description="Aluno recuperado com sucesso!"),
@@ -76,8 +76,9 @@ description ="Retorna os detalhes completos de um aluno com base no ID fornecido
 }
 
  * */
-@Operation(summary = "Cria de um novo aluno",
+@Operation(summary = "Criar de um novo aluno",
 description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
+
 @ApiResponses(value = {
 	    @ApiResponse(responseCode = "200", description = "Operação bem-sucedida, aluno cadastrado"),
         @ApiResponse(responseCode = "201", description = "Aluno cadastrado com sucesso"),
@@ -89,7 +90,31 @@ description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
 	public Aluno createAluno(@RequestBody Aluno aluno) {
 		return alunoRepository.save(aluno);
 	}
-//Editar um aluno
+@Operation(summary="Editar um aluno pelo ID especifíco",
+description="Endpoint responsável por editar um aluno existente no sistema")
+@ApiResponses(value = {
+	    @ApiResponse(responseCode = "200", description = "Aluno atualizado com sucesso"),
+	    @ApiResponse(responseCode = "400", description = "Requisição inválida. Verifique os parâmetros de entrada."),
+	    @ApiResponse(responseCode = "404", description = "Aluno não encontrado com o ID fornecido"),
+	    @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+	})
+/*Para testar o Swagger e editar um aluno com sucesso, faça o seguinte:
+ * Use o método de pegar um aluno pelo ID
+ * Copie o Json gerado
+ * Delete o json criado e subsitua por esse modelo do ID escolhido
+ * Como exemplo esse modelo:
+ * {
+  "@id": 1,
+  "id": 1,
+  "nome": "aluno0",
+  "telefone": "444555780",
+  "dataNascimento": "2024-01-22",
+  "email": "aluno@aluno.com 0",
+  "tipoUsuario": "USER",
+  "senha": "1234",
+  "turmas": []
+}
+ * */
 
 	@PutMapping("alunos/{id}")
 	public Aluno updateAluno(@PathVariable Long id, @RequestBody Aluno alunoDetails) {
@@ -105,7 +130,7 @@ description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
 
 	}
 
-	@Operation(summary="Apagar um aluno",
+	@Operation(summary="Remover um aluno",
 			description="Esta opção permite a remoção de um aluno com um ID específico")
 	@ApiResponse(responseCode = "200", description = "Aluno removido com sucesso")
 	@ApiResponse(responseCode = "404", description = "Aluno não encontrado para o ID fornecido")
