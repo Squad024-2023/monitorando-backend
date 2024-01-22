@@ -34,15 +34,15 @@ public class ProfessorController {
 //	
 	
 	//get all "professores"
-	@Operation(summary = "Buscar todos professores")
+	@Operation(summary = "Método para listar todos professores")
 	@GetMapping("/listar professores")
 	public List<Professor> getAllProfessores(){
 		return professorRepository.findAll();
 	}
 	
 	//get professor by id rest api
-	@Operation(summary = "Buscar Professores por ID")
-	@GetMapping("/professores/{id}")
+	@Operation(summary = "Método para buscar Professores por ID")
+	@GetMapping("/buacar professores/{id}")
 	public Professor getProfessorById(@PathVariable Long id) {
 		return professorRepository.findById(id).get();
 	}
@@ -55,7 +55,7 @@ public class ProfessorController {
 	}
 	
 	//update professor rest api
-	@Operation(summary = "Atualizar os dados")
+	@Operation(summary = "Método para atualizar os dados")
 	@PutMapping("/atualizar/{id}")
 	public Professor updateProfessor(@PathVariable Long id, @RequestBody Professor professorDetails) {
 		Professor professor = professorRepository.findById(id).get();
@@ -70,7 +70,8 @@ public class ProfessorController {
 		return professorRepository.save(professor);
 	}
 	//delete professor rest api
-	@DeleteMapping("/professores/{id}")
+	@Operation(summary = "Método para deletar os dados")
+	@DeleteMapping("/deletar professores/{id}")
 	public void deleteProfessor(@PathVariable Long id) {
 		professorRepository.deleteById(id);
 	}
