@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.webjars.NotFoundException;
 
+import com.MBE.docsapi.AlunoControllerApi;
 import com.MBE.model.Aluno;
 import com.MBE.repository.AlunoRepository;
 
@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @CrossOrigin
 @RestController
-public class AlunoController {
+public class AlunoController implements AlunoControllerApi {
 
 	@Autowired
 	private AlunoRepository alunoRepository;
