@@ -29,7 +29,8 @@ public class AlunoController implements AlunoControllerApi {
 	@Autowired
 	private AlunoRepository alunoRepository;
 
-	@Operation(summary = "Retornar uma lista de todos os alunos cadastrados")
+	@Operation(summary = "Retornar uma lista de todos os alunos cadastrados",
+			description="Aqui temos todos os alunos cadastrados no Sistema")
 	@ApiResponses(value = {
 		    @ApiResponse(responseCode = "200", description = "Lista de alunos recuperada com sucesso"),
 		    @ApiResponse(responseCode = "404", description = "Nenhum aluno encontrado")
@@ -76,7 +77,7 @@ description ="Retorna os detalhes completos de um aluno com base no ID fornecido
 }
 
  * */
-@Operation(summary = "Criar de um novo aluno",
+@Operation(summary = "Criar um novo aluno",
 description = "Endpoint responsável por cadastrar um novo aluno no sistema.")
 
 @ApiResponses(value = {
