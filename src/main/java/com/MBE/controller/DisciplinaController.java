@@ -51,14 +51,25 @@ public class DisciplinaController implements DisciplinaControllerApi {
     public Disciplina getDisciplinaById(@PathVariable Long id) {
         return disciplinaRepository.findById(id).get();
     }
-    
-    //create professor rest api
+	
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
+	})
+	@Operation(summary = "Criar nova disciplinas:")
     @PostMapping("/disciplinas")
     public Disciplina createDisciplina(@RequestBody Disciplina disciplina) {
         return disciplinaRepository.save(disciplina);
     }
     
-    //update disciplina rest api
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada."),
+			@ApiResponse(responseCode = "500", description = "Não é possível atualizar, disciplina vinculada ao professor.")
+	})
+	@Operation(summary = "Atualizar disciplina:")
     @PutMapping("/disciplinas/{id}")
     public Disciplina updateDisciplina(@PathVariable Long id, @RequestBody Disciplina disciplinaDetails) {
         Disciplina disciplina = disciplinaRepository.findById(id).get();
@@ -68,12 +79,15 @@ public class DisciplinaController implements DisciplinaControllerApi {
         return disciplinaRepository.save(disciplina);             
     }
     
-    //delete professor rest api
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
+			@ApiResponse(responseCode = "500", description = "Não é possível excluir, disciplina vinculada a turma.")
+	})
+	@Operation(summary = "Deletar disciplina por ID:")
     @DeleteMapping("/disciplinas/{id}")
     public void deleteDisciplina(@PathVariable Long id) {
         disciplinaRepository.deleteById(id);
     }
-
-
 
 }
