@@ -49,13 +49,14 @@ public class ProfessorController {
 	
 	//create professor rest api
 	@Operation(summary = "Método para criar novos dados")
-	@PostMapping("/professores")
+	@PostMapping("/criar")
 	public Professor createProfessor(@RequestBody Professor professor) {
 		return professorRepository.save(professor);
 	}
 	
 	//update professor rest api
-	@PutMapping("/professores/{id}")
+	@Operation(summary = "Atualizar os dados")
+	@PutMapping("/atualizar/{id}")
 	public Professor updateProfessor(@PathVariable Long id, @RequestBody Professor professorDetails) {
 		Professor professor = professorRepository.findById(id).get();
 		professor.setNome(professorDetails.getNome());
