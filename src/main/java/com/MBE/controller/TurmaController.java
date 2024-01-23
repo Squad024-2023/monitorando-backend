@@ -17,12 +17,8 @@ import com.MBE.model.Turma;
 import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
-<<<<<<< HEAD
-import io.swagger.v3.oas.annotations.tags.Tag;
-=======
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
->>>>>>> kaua
 
 @CrossOrigin
 @RestController
@@ -41,15 +37,8 @@ public class TurmaController implements TurmaControllerApi {
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-<<<<<<< HEAD
 		
-	//get turma by id rest api
-	@GetMapping("/turmas/{id}")
-	public Turma getTurmaById(@PathVariable Long id) {
-		return turmaRepository.findById(id).get();
-	}
 
-=======
 	
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
@@ -69,22 +58,22 @@ public class TurmaController implements TurmaControllerApi {
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
 	
->>>>>>> kaua
+
 	@Operation(summary = "Criar nova turma")
 	@PostMapping("/turmas")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
-<<<<<<< HEAD
 
-=======
+
+
 	
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
->>>>>>> kaua
+
 	@Operation(summary = "Atualizar turma")
 	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
