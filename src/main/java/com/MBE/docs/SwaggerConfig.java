@@ -26,10 +26,12 @@ public class SwaggerConfig {
 			.url("https://github.com/Squad024-2023/monitorando-backend/tree/master"))
 		.tags(	
 			Arrays.asList(
+
 					new Tag().name("Turma").description("Métodos de Turmas"),
 					new Tag().name("Aluno").description("Métodos de Alunos"),
 					new Tag().name("Disciplina").description("Métodos de Disciplinas"),
 					new Tag().name("Professor").description("Métodos de Professores")
+
 					)
 		);
 					
