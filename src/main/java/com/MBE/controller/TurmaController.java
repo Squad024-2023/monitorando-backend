@@ -37,8 +37,6 @@ public class TurmaController implements TurmaControllerApi {
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-		
-
 	
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
@@ -58,22 +56,17 @@ public class TurmaController implements TurmaControllerApi {
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
 	
-
 	@Operation(summary = "Criar nova turma")
 	@PostMapping("/turmas")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
-
-
-
 	
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
 	})
-
 	@Operation(summary = "Atualizar turma")
 	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
