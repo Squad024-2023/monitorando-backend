@@ -6,10 +6,11 @@ import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -22,7 +23,8 @@ public class Professor extends Usuarios {
     private String profDescricao;
 	
 	
-	@ManyToMany(mappedBy = "professores", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "professor_disciplina", joinColumns = @JoinColumn(name = "professor_id_fk"), inverseJoinColumns = @JoinColumn(name = "disciplina_id_fk"))
 	private Set<Disciplina> disciplinas = new HashSet<Disciplina>();
 
 	

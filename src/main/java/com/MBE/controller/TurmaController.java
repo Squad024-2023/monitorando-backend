@@ -76,6 +76,8 @@ public class TurmaController implements TurmaControllerApi {
 		turma.setDisciplina(turmaDetails.getDisciplina());
 		turma.setProfessor(turmaDetails.getProfessor());
 		turma.setDataAula(turmaDetails.getDataAula());
+//		turma.setAlunos(turmaDetails.getAlunos());
+		turma.getAlunos().addAll(turmaDetails.getAlunos());
 		return turmaRepository.save(turma);
 	}
 

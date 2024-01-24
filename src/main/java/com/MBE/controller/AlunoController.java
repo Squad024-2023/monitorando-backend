@@ -137,7 +137,9 @@ description="Endpoint responsável por editar um aluno existente no sistema")
 	@ApiResponse(responseCode = "404", description = "Aluno não encontrado para o ID fornecido")
 	@DeleteMapping("/alunos/{id}")
 	public void deleteAluno(@PathVariable Long id) {
-		alunoRepository.deleteById(id);
-	}
+		        alunoRepository.deleteById(id);
+		    }
+		    
+	
 
 }
