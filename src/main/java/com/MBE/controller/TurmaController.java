@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.MBE.docsapi.TurmaControllerApi;
+import com.MBE.model.Aluno;
 import com.MBE.model.Turma;
+import com.MBE.repository.AlunoRepository;
 import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -28,45 +30,40 @@ public class TurmaController implements TurmaControllerApi {
 	@Autowired
 	private TurmaRepository turmaRepository;
 
-	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+	@Autowired
+	private AlunoRepository alunoRepository;
+
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
-			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
-	})
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.") })
 	@GetMapping("/turmas")
 	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-	
-	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
-			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
-	})
-	
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.") })
+
 	@Operation(summary = "Consultar por ID")
-    @GetMapping("/turmas/{id}")
-    public Turma getTurmaById(@PathVariable Long id) {
-        return turmaRepository.findById(id).get();
-    }
-	
-	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+	@GetMapping("/turmas/{id}")
+	public Turma getTurmaById(@PathVariable Long id) {
+		return turmaRepository.findById(id).get();
+	}
+
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
-			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
-	})
-	
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.") })
+
 	@Operation(summary = "Criar nova turma")
 	@PostMapping("/turmas")
 	public Turma createTurma(@RequestBody Turma turma) {
 		return turmaRepository.save(turma);
 	}
-	
-	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
-			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
-	})
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.") })
 	@Operation(summary = "Atualizar turma")
 	@PutMapping("/turmas/{id}")
 	public Turma updateTurma(@PathVariable Long id, @RequestBody Turma turmaDetails) {
@@ -76,20 +73,22 @@ public class TurmaController implements TurmaControllerApi {
 		turma.setDisciplina(turmaDetails.getDisciplina());
 		turma.setProfessor(turmaDetails.getProfessor());
 		turma.setDataAula(turmaDetails.getDataAula());
-//		turma.setAlunos(turmaDetails.getAlunos());
-		turma.getAlunos().addAll(turmaDetails.getAlunos());
+		turma.setAlunos(turmaDetails.getAlunos());
 		return turmaRepository.save(turma);
 	}
 
-	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
-			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")
-	})
+			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.") })
 	@Operation(summary = "Deletar turma por ID")
 	@DeleteMapping("/turmas/{id}")
 	public void deleteTurma(@PathVariable Long id) {
+		Turma turma = turmaRepository.findById(id).get();
+		for (Aluno aluno : turma.getAlunos()) {
+			aluno.getTurmas().clear();
+			alunoRepository.save(aluno);
+		}
 		turmaRepository.deleteById(id);
 	}
-	
+
 }

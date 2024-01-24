@@ -38,6 +38,14 @@ public class Runner implements CommandLineRunner {
 		// Professor
 		for (int i = 0; i <= 3; i++) {
 			String x = String.valueOf(i);
+		
+
+			// Disciplina
+			Disciplina disc0 = new Disciplina();
+			disc0.setId((long) 1 + i);
+			disc0.setNome("Física" + x);
+			disciplinaRepository.save(disc0);
+			
 			Professor prof0 = new Professor();
 			prof0.setId((long) 1 + i);
 			prof0.setNome("admin" + x);
@@ -47,25 +55,10 @@ public class Runner implements CommandLineRunner {
 			prof0.setProfDescricao("administrador do sistema." + x);
 			prof0.setTipoUsuario(TipoUsuario.ADMIN);
 			prof0.setSenha("0000");
+			prof0.getDisciplinas().add(disc0);
 			professorRepository.save(prof0);
 
-			// Disciplina
-			Disciplina disc0 = new Disciplina();
-			disc0.setId((long) 1 + i);
-			disc0.setNome("Física" + x);
-			disc0.getProfessores().add(prof0);
-			disciplinaRepository.save(disc0);
-
-			// Alunos
-			Aluno aluno0 = new Aluno();
-			aluno0.setId((long) 1 + i);
-			aluno0.setNome("aluno" + x);
-			aluno0.setEmail("aluno@aluno.com " + x);
-			aluno0.setDataNascimento(LocalDate.now());
-			aluno0.setTelefone("44455578" + x);
-			aluno0.setTipoUsuario(TipoUsuario.USER);
-			aluno0.setSenha("1234");
-			alunoRepository.save(aluno0);
+		
 
 			//Turmas
 			Turma turma0 = new Turma();
@@ -75,8 +68,19 @@ public class Runner implements CommandLineRunner {
 			turma0.setProfessor(prof0);
 			turma0.setDataAula(LocalDateTime.now());
 			turma0.setTipoTurma(TipoTurma.COLETIVA);
-			turma0.getAlunos().add(aluno0);
 			turmaRepository.save(turma0);
+			
+			// Alunos
+			Aluno aluno0 = new Aluno();
+			aluno0.setId((long) 1 + i);
+			aluno0.setNome("aluno" + x);
+			aluno0.setEmail("aluno@aluno.com " + x);
+			aluno0.setDataNascimento(LocalDate.now());
+			aluno0.setTelefone("44455578" + x);
+			aluno0.setTipoUsuario(TipoUsuario.USER);
+			aluno0.setSenha("1234");
+			aluno0.getTurmas().add(turma0);
+			alunoRepository.save(aluno0);
 		}
 	}
 }
