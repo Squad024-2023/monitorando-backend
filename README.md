@@ -98,7 +98,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
 <table>
   <tr>
     <td align="center" style="padding: 10px;">
-       ![Captura de tela 2024-01-25 005816](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/583aa263-bae2-426e-a7c8-e397f3045b16) <br>
+      <img src=".https://raw.githubusercontent.com/Squad024-2023/monitorando-frontend/master/public/images/arthur.webp" width="200px;" alt="Arthur"/><br>
         <sub>
           <b>Arthur Bernard</b>
           <p> <a href="https://www.linkedin.com/in/ber-arthur/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/Daedaluzz"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
