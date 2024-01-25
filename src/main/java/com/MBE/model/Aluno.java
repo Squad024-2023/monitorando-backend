@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class Aluno extends Usuarios{
 		
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	@JoinTable(name = "aluno_turma", joinColumns = @JoinColumn(name = "aluno_id_fk"), inverseJoinColumns = @JoinColumn(name = "turma_id_fk"))
 	private Set<Turma> turmas = new HashSet<Turma>();
 

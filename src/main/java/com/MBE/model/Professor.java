@@ -6,6 +6,7 @@ import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,7 +16,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id",  scope = Professor.class)
 @Table(name = "professores")
 public class Professor extends Usuarios {
 
@@ -23,7 +24,7 @@ public class Professor extends Usuarios {
     private String profDescricao;
 	
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	@JoinTable(name = "professor_disciplina", joinColumns = @JoinColumn(name = "professor_id_fk"), inverseJoinColumns = @JoinColumn(name = "disciplina_id_fk"))
 	private Set<Disciplina> disciplinas = new HashSet<Disciplina>();
 

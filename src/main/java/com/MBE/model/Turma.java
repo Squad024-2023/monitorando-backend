@@ -10,6 +10,7 @@ import com.MBE.enums.TipoTurma;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -21,7 +22,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id") //usado para gerar identidade durante serialização e deserialização
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id",  scope = Turma.class) //usado para gerar identidade durante serialização e deserialização
 @Table(name = "turmas")
 public class Turma extends Entidade{
 	
@@ -44,7 +45,7 @@ public class Turma extends Entidade{
 	@JoinColumn(name = "disciplina_id_fk", nullable= false)
 	private Disciplina disciplina;
 	
-	@ManyToMany(mappedBy = "turmas", fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "turmas", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	private Set<Aluno> alunos = new HashSet<Aluno>();
 
 	public String getMateriaTurma() {

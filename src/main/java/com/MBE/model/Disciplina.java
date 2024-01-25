@@ -15,7 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id") // usado para gerar
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Disciplina.class) // usado para gerar
 																								// identidade durante
 																								// serialização e
 																								// deserialização
@@ -26,7 +26,7 @@ public class Disciplina extends Entidade {
 	private String nome;
 
 
-	@ManyToMany(mappedBy = "disciplinas", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+	@ManyToMany(mappedBy = "disciplinas", fetch = FetchType.EAGER)
 	private Set<Professor> professores = new HashSet<Professor>();
 	
 	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
