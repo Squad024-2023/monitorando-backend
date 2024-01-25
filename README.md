@@ -98,7 +98,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
 <table>
   <tr>
     <td align="center" style="padding: 10px;">
-      <img src=".https://raw.githubusercontent.com/Squad024-2023/monitorando-frontend/master/public/images/arthur.webp" width="200px;" alt="Arthur"/><br>
+      <br>
         <sub>
           <b>Arthur Bernard</b>
           <p> <a href="https://www.linkedin.com/in/ber-arthur/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/Daedaluzz"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -106,7 +106,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-       ![Captura de tela 2024-01-25 005828](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/680215b9-54ab-4b57-8e0a-4c97ccc3781e) <br>
+      <br>
         <sub>
           <b>Nayara Pereira</b>
           <p> <a href="https://www.linkedin.com/in/nayarabpereira/"><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/nxyara"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -114,7 +114,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-![Captura de tela 2024-01-25 005838](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/b287b6ff-595c-4004-8cac-153c8ce6e60c) <br>
+<br>
         <sub>
           <b>Kauã Alves</b>
           <p> <a href="https://www.linkedin.com/in/kaua-amelo96/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/kauaamelo"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -122,7 +122,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-      ![Captura de tela 2024-01-25 005848](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/06263269-1b36-424a-bef6-39b600d12b01) <br>
+      <br>
         <sub>
           <b>Mariana Moreira</b>
           <p> <a href="https://www.linkedin.com/in/mariana-moreira-santos-39417828a/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/mari-moreira"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -130,7 +130,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-        ![Captura de tela 2024-01-25 005902](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/c956bacb-ad30-4960-9d97-0a770525df4e) <br>
+        <br>
         <sub>
           <b>Bianca Tayla</b>
           <p> <a href="https://www.linkedin.com/in/bianca-t-7b5972255/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/Y777-CoderTech"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
