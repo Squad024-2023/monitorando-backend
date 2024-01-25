@@ -38,11 +38,11 @@ public class Turma extends Entidade{
 	private LocalDateTime dataAula;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "professor_id_fk", nullable= false)
+	@JoinColumn(name = "professor_id_fk")
 	private Professor professor;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "disciplina_id_fk", nullable= false)
+	@JoinColumn(name = "disciplina_id_fk")
 	private Disciplina disciplina;
 	
 	@ManyToMany(mappedBy = "turmas", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})

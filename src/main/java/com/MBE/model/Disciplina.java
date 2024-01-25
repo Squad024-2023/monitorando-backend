@@ -26,7 +26,7 @@ public class Disciplina extends Entidade {
 	private String nome;
 
 
-	@ManyToMany(mappedBy = "disciplinas", fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "disciplinas", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	private Set<Professor> professores = new HashSet<Professor>();
 	
 	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
