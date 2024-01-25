@@ -57,6 +57,7 @@ Você pode contribuir para o Monitorando de várias maneiras:
 - Java Spring Boot
 - MySQL
 - Swagger
+<br>
 ![github-spring](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/7c5cd347-c9e2-4de1-91d7-c1d7e46e86a2) | ![github-mysql](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/392d2d23-2ea0-4e4a-b134-6ac57b5a850c) | ![github-swagger](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/73afcff3-48b7-4a4a-aa94-089fbb1747cb)
 
 ## Layout
@@ -65,11 +66,12 @@ Demonstração da página inicial do nosso site:
 
 <br>
 
-<img src="./public/github/Monitorando1.png">
-<img src= "./public/github/Monitorando2.png">
-<img src= "./public/github/Monitorando3.png">
-<img src= "./public/github/Monitorando4.png">
-<img src= "./public/github/Monitorando5.png">
+![Monitorando1](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/540351af-88d4-4f2c-b794-d6fdecc9988d)
+![Monitorando2](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/e9a688b2-8158-4ee3-9092-eec66cf89ba5)
+![Monitorando3](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/ccb891ef-1203-4f22-ac38-62cd80102367)
+![Monitorando4](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/75d097e2-205f-4354-a1db-4517d6adfb16)
+![Monitorando5](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/3023d520-65f6-4805-8565-11ca2c125a28)
+
 
 <br>
 
@@ -100,7 +102,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
 <table>
   <tr>
     <td align="center" style="padding: 10px;">
-        <img src="./public/images/arthur.webp" width="200px;" alt="Arthur"/><br>
+       ![image](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/6e404c2f-ea6e-409d-b67e-41a25033bba6)<br>
         <sub>
           <b>Arthur Bernard</b>
           <p> <a href="https://www.linkedin.com/in/ber-arthur/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/Daedaluzz"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -108,7 +110,8 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-        <img src="./public/images/nayara.webp" width="200px;" alt="Arthur"/><br>
+       ![image](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/9ee77655-4cd8-4a4b-b81e-c0a75ba34775)
+ <br>
         <sub>
           <b>Nayara Pereira</b>
           <p> <a href="https://www.linkedin.com/in/nayarabpereira/"><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/nxyara"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -116,7 +119,8 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-        <img src="./public/images/kaua.webp" width="210px;" alt="Arthur"/><br>
+       ![image](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/3b39d4ab-bff1-49ed-bcbd-e47dbf514d0f)
+ <br>
         <sub>
           <b>Kauã Alves</b>
           <p> <a href="https://www.linkedin.com/in/kaua-amelo96/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/kauaamelo"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -124,7 +128,8 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-        <img src="./public/images/mariana.webp" width="200px;" alt="Arthur"/><br>
+       ![image](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/6b9bd1f8-ea82-4a09-a133-adab322ec396)
+ <br>
         <sub>
           <b>Mariana Moreira</b>
           <p> <a href="https://www.linkedin.com/in/mariana-moreira-santos-39417828a/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/mari-moreira"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -132,7 +137,8 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-        <img src="./public/images/bianca.webp" width="200px;" alt="Arthur"/><br>
+        ![image](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/dcd42b18-9816-4f8f-a586-610fa8add131)
+ <br>
         <sub>
           <b>Bianca Tayla</b>
           <p> <a href="https://www.linkedin.com/in/bianca-t-7b5972255/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/Y777-CoderTech"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
