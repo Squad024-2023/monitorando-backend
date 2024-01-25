@@ -55,9 +55,6 @@ Você pode contribuir para o Monitorando de várias maneiras:
 - Java Spring Boot
 - MySQL
 - Swagger
-<br>
-![github-spring](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/9a9ecbfd-0445-4dba-b1a4-7c4c5f44f422) | ![github-mysql](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/8377a132-4f7d-4a1b-ab20-40b2cc061ddb) | ![github-swagger](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/47317891-8b4f-460d-ba49-1c7559850ad4)
-
 
 ## Layout
 
