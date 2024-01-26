@@ -3,8 +3,7 @@ package com.MBE.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,13 +13,12 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @Table(name = "disciplinas")
-public class Disciplina extends Entidade {
+public class Disciplina extends Entidade {	
 
 	@Column(nullable = false)
 	private String nome;
-	
+    @JsonIgnore
 	@ManyToMany(mappedBy = "disciplinas", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	private Set<Professor> professores = new HashSet<Professor>();
 	
