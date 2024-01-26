@@ -41,9 +41,6 @@ public class Turma extends Entidade{
 	@JoinColumn(name = "professor_id_fk")
 	private Professor professor;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "disciplina_id_fk")
-	private Disciplina disciplina;
 	
 	@ManyToMany(mappedBy = "turmas", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	private Set<Aluno> alunos = new HashSet<Aluno>();
@@ -78,14 +75,6 @@ public class Turma extends Entidade{
 
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
-	}
-
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
 	}
 
 	public Set<Aluno> getAlunos() {

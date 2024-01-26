@@ -64,7 +64,6 @@ public class Runner implements CommandLineRunner {
 			Turma turma0 = new Turma();
 			turma0.setId((long) 1+i);
 			turma0.setMateriaTurma("Eletromagnetismo" + x);
-			turma0.setDisciplina(disc0);
 			turma0.setProfessor(prof0);
 			turma0.setDataAula(LocalDateTime.now());
 			turma0.setTipoTurma(TipoTurma.COLETIVA);
