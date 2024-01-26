@@ -97,8 +97,9 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
 
 <table>
   <tr>
-    <td align="center" style="padding: 10px;">
-      <br>
+    <td align="center" style="padding: 10px;">    
+      ![arthur](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/0e7151e9-7502-41af-bc71-0657fc9c33b0)
+       <br>
         <sub>
           <b>Arthur Bernard</b>
           <p> <a href="https://www.linkedin.com/in/ber-arthur/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/Daedaluzz"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
@@ -106,6 +107,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
+       ![nayara](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/1171c333-34f3-427d-aace-205f11946333)
       <br>
         <sub>
           <b>Nayara Pereira</b>
@@ -114,14 +116,16 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-<br>
-        <sub>
+       ![kaua](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/90fe311a-e1ac-493c-8a6e-7597a81b9f71)
+   <br>
+      <sub>
           <b>Kauã Alves</b>
           <p> <a href="https://www.linkedin.com/in/kaua-amelo96/" ><img src="https://img.icons8.com/color/38/000000/linkedin.png"/></a> <a href="https://github.com/kauaamelo"><img src="https://img.icons8.com/ios-glyphs/38/000000/github.png"/></a>
         </sub>
       </a>
     </td>
     <td align="center" style="padding: 10px;">
+       ![mariana](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/70ebd91e-3f6d-4b17-8cc1-cbcf0b607477)
       <br>
         <sub>
           <b>Mariana Moreira</b>
@@ -130,6 +134,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
+       ![bianca](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/3b592bd5-3749-47f4-a4c2-b832c025234e)
         <br>
         <sub>
           <b>Bianca Tayla</b>
