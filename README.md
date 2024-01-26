@@ -62,12 +62,11 @@ Demonstração da página inicial do nosso site:
 
 <br>
 
-![Monitorando1](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/540351af-88d4-4f2c-b794-d6fdecc9988d)
-![Monitorando2](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/e9a688b2-8158-4ee3-9092-eec66cf89ba5)
-![Monitorando3](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/ccb891ef-1203-4f22-ac38-62cd80102367)
-![Monitorando4](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/75d097e2-205f-4354-a1db-4517d6adfb16)
-![Monitorando5](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/3023d520-65f6-4805-8565-11ca2c125a28)
-
+<img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/540351af-88d4-4f2c-b794-d6fdecc9988d"/>
+<img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/e9a688b2-8158-4ee3-9092-eec66cf89ba5"/>
+<img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/ccb891ef-1203-4f22-ac38-62cd80102367"/>
+<img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/75d097e2-205f-4354-a1db-4517d6adfb16"/>
+<img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/3023d520-65f6-4805-8565-11ca2c125a28"/>
 
 <br>
 
@@ -89,7 +88,6 @@ Para contribuir com o **Monitorando**, siga estas etapas:
 ## Colaboradores
 
 O **Monitorando** foi desenvolvido pelo Squad 24 no curso Recode PRO 2023.
-
 Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no Linkedin e GitHub!
 
 <br>
@@ -98,7 +96,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
 <table>
   <tr>
     <td align="center" style="padding: 10px;">    
-      ![arthur](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/0e7151e9-7502-41af-bc71-0657fc9c33b0)
+      <img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/766ccf1b-1d46-4d16-8e25-2e770fd60acf"/>
        <br>
         <sub>
           <b>Arthur Bernard</b>
@@ -107,7 +105,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-       ![nayara](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/1171c333-34f3-427d-aace-205f11946333)
+       <img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/fb77716d-4a9a-4df1-afaa-e6a6af57e2af"/>
       <br>
         <sub>
           <b>Nayara Pereira</b>
@@ -116,7 +114,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-       ![kaua](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/90fe311a-e1ac-493c-8a6e-7597a81b9f71)
+      <img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/5ce60525-3d28-465c-95dd-dfbe42322f13"/>
    <br>
       <sub>
           <b>Kauã Alves</b>
@@ -125,7 +123,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-       ![mariana](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/70ebd91e-3f6d-4b17-8cc1-cbcf0b607477)
+       <img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/46be9c7c-6778-4cca-9499-53dc73fc71fc"/>
       <br>
         <sub>
           <b>Mariana Moreira</b>
@@ -134,7 +132,7 @@ Os integrantes estão apresentados abaixo, fique a vontade para nos encontrar no
       </a>
     </td>
     <td align="center" style="padding: 10px;">
-       ![bianca](https://github.com/Squad024-2023/monitorando-backend/assets/140784122/3b592bd5-3749-47f4-a4c2-b832c025234e)
+      <img src="https://github.com/Squad024-2023/monitorando-backend/assets/140784122/197689b2-ba33-40a2-8908-1561fb59171d"/>
         <br>
         <sub>
           <b>Bianca Tayla</b>
