@@ -37,7 +37,7 @@ public class ProfessorController implements ProfessorControllerApi {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")	})	
-	@GetMapping("/professor")
+	@GetMapping("/professores")
 	public List<Professor> getAllProfessores(){
 		return professorRepository.findAll();
 	}
@@ -47,7 +47,7 @@ public class ProfessorController implements ProfessorControllerApi {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")	})	
-	@GetMapping("/professor/{id}")
+	@GetMapping("/professores/{id}")
 	public Professor getProfessorById(@PathVariable Long id) {
 		return professorRepository.findById(id).get();
 	}
@@ -57,7 +57,7 @@ public class ProfessorController implements ProfessorControllerApi {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")	})
-	@PostMapping("/professor")
+	@PostMapping("/professores")
 	public Professor createProfessor(@RequestBody Professor professor) {
 		return professorRepository.save(professor);
 	}
@@ -67,7 +67,7 @@ public class ProfessorController implements ProfessorControllerApi {
 			@ApiResponse(responseCode = "200", description = "Solicitação bem sucedida."),
 			@ApiResponse(responseCode = "201", description = "Solicitação criada."),
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada.")	})
-	@PutMapping("/professor/{id}")
+	@PutMapping("/professores/{id}")
 	public Professor updateProfessor(@PathVariable Long id, @RequestBody Professor professorDetails) {
 		Professor professor = professorRepository.findById(id).get();
 		professor.setNome(professorDetails.getNome());
@@ -87,7 +87,7 @@ public class ProfessorController implements ProfessorControllerApi {
 			@ApiResponse(responseCode = "404", description = "Solicitação não encontrada."),
 			@ApiResponse(responseCode = "500", description = "Professor está vinculado a disciplina, não pode ser excluído. ") })
 	@Operation(summary = "Deletar um professor por ID:")
-	@DeleteMapping("/professor/{id}")
+	@DeleteMapping("/professores/{id}")
 	public void deleteProfessor(@PathVariable Long id) {
 		professorRepository.deleteById(id);
 	}
