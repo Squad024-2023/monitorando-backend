@@ -3,8 +3,7 @@ package com.MBE.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -16,18 +15,17 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id",  scope = Professor.class)
+
 @Table(name = "professores")
 public class Professor extends Usuarios {
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String profDescricao;
 	
-	
+    @JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	@JoinTable(name = "professor_disciplina", joinColumns = @JoinColumn(name = "professor_id_fk"), inverseJoinColumns = @JoinColumn(name = "disciplina_id_fk"))
 	private Set<Disciplina> disciplinas = new HashSet<Disciplina>();
-
 	
 	public String getProfDescricao() {
 		return profDescricao;

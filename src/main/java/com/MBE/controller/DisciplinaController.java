@@ -69,7 +69,6 @@ public class DisciplinaController implements DisciplinaControllerApi {
 		Disciplina disciplina = disciplinaRepository.findById(id).get();
 		disciplina.setNome(disciplinaDetails.getNome());
 		disciplina.setProfessores(disciplinaDetails.getProfessores());
-		disciplina.setTurmas(disciplinaDetails.getTurmas());
 		return disciplinaRepository.save(disciplina);
 	}
 
