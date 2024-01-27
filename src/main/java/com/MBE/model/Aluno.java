@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -18,9 +16,8 @@ import jakarta.persistence.Table;
 public class Aluno extends Usuarios{
 		
     @JsonIgnore
-	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
-	@JoinTable(name = "aluno_turma", joinColumns = @JoinColumn(name = "aluno_id_fk"), inverseJoinColumns = @JoinColumn(name = "turma_id_fk"))
-	private Set<Turma> turmas = new HashSet<Turma>();
+    @ManyToMany(mappedBy = "alunos", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+    private Set<Turma> turmas = new HashSet<Turma>();
 
 	public Set<Turma> getTurmas() {
 		return turmas;

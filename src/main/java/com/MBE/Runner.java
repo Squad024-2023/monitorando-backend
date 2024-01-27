@@ -58,17 +58,6 @@ public class Runner implements CommandLineRunner {
 			prof0.getDisciplinas().add(disc0);
 			professorRepository.save(prof0);
 
-		
-
-			//Turmas
-			Turma turma0 = new Turma();
-			turma0.setId((long) 1+i);
-			turma0.setMateriaTurma("Eletromagnetismo" + x);
-			turma0.setProfessor(prof0);
-			turma0.setDataAula(LocalDateTime.now());
-			turma0.setTipoTurma(TipoTurma.COLETIVA);
-			turmaRepository.save(turma0);
-			
 			// Alunos
 			Aluno aluno0 = new Aluno();
 			aluno0.setId((long) 1 + i);
@@ -78,8 +67,19 @@ public class Runner implements CommandLineRunner {
 			aluno0.setTelefone("44455578" + x);
 			aluno0.setTipoUsuario(TipoUsuario.USER);
 			aluno0.setSenha("1234");
-			aluno0.getTurmas().add(turma0);
 			alunoRepository.save(aluno0);
+
+			//Turmas
+			Turma turma0 = new Turma();
+			turma0.setId((long) 1+i);
+			turma0.setMateriaTurma("Eletromagnetismo" + x);
+			turma0.setProfessor(prof0);
+			turma0.setDataAula(LocalDateTime.now());
+			turma0.setTipoTurma(TipoTurma.COLETIVA);
+			turma0.getAlunos().add(aluno0);
+			turmaRepository.save(turma0);
+			
+		
 		}
 	}
 }

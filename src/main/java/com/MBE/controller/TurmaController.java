@@ -1,6 +1,7 @@
 package com.MBE.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -82,12 +83,18 @@ public class TurmaController implements TurmaControllerApi {
 	@Operation(summary = "Deletar turma por ID")
 	@DeleteMapping("/turmas/{id}")
 	public void deleteTurma(@PathVariable Long id) {
-		Turma turma = turmaRepository.findById(id).get();
-		for (Aluno aluno : turma.getAlunos()) {
-			aluno.getTurmas().clear();
-			alunoRepository.save(aluno);
-		}
-		turmaRepository.deleteById(id);
+		Turma turma = turmaRepository.findById(id).orElse(null);
+
+	    if (turma != null) {
+	        Set<Aluno> alunos = turma.getAlunos();
+
+	        for (Aluno aluno : alunos) {
+	            aluno.getTurmas().removeIf(t -> t.getId().equals(id));
+	            alunoRepository.save(aluno);
+	        }
+
+	        turmaRepository.deleteById(id);
+	    }
 	}
 
 }

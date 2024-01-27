@@ -1,6 +1,7 @@
 package com.MBE.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,7 +16,9 @@ import org.webjars.NotFoundException;
 
 import com.MBE.docsapi.AlunoControllerApi;
 import com.MBE.model.Aluno;
+import com.MBE.model.Turma;
 import com.MBE.repository.AlunoRepository;
+import com.MBE.repository.TurmaRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -28,6 +31,9 @@ public class AlunoController implements AlunoControllerApi {
 
 	@Autowired
 	private AlunoRepository alunoRepository;
+	
+	@Autowired
+	private TurmaRepository turmaRepository;
 
 	@Operation(summary = "Retornar uma lista de todos os alunos cadastrados",
 			description="Aqui temos todos os alunos cadastrados no Sistema")
@@ -137,9 +143,19 @@ description="Endpoint responsável por editar um aluno existente no sistema")
 	@ApiResponse(responseCode = "404", description = "Aluno não encontrado para o ID fornecido")
 	@DeleteMapping("/alunos/{id}")
 	public void deleteAluno(@PathVariable Long id) {
-		        alunoRepository.deleteById(id);
-		    }
-		    
+	    Aluno aluno = alunoRepository.findById(id).orElse(null);
+
+	    if (aluno != null) {
+	        Set<Turma> turmas = aluno.getTurmas();
+
+	        for (Turma turma : turmas) {
+	            turma.getAlunos().removeIf(a -> a.getId().equals(id));
+	            turmaRepository.save(turma);
+	        }
+
+	        alunoRepository.deleteById(id);
+	    }
+	}
 	
 
 }
